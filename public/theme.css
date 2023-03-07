@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com');
+@import url('https://fonts.gstatic.com');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rajdhani:wght@300;400&family=Turret+Road:wght@300;400&display=swap');
+
+body {
+  background-image: url("wave-haikei.svg");
+  background-color: rgb(250, 248, 231);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6{
+
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+}
+
+td:nth-child(odd){
+  border: #e66465 2px;
+  background-color: #8C4B7E
+
+
+}
+
+
+
+
+
+
+footer {
+  margin-top: auto;
+}
+
+.text-center {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.navbar {
+  background-color: #8C4B7E;
+  color: white;
+  border: 1px black;
+}
+
+.nav-link:hover {
+  color: #c0a1ba;
+}
+
+.navbar-brand, .nav-item, .nav-item:active, .nav-link {
+  background-color: #8C4B7E;
+  color: white;
+}
+
+.navbar-brand .navbar-light, .navbar-light:active {
+  color: black;
+  text-shadow: 1px 1px white;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Pacifico", cursive;
+  margin-left: 30px;
+}
+
+.legendlegend{
+  font-family: 'Turret Road', cursive;
+  font-weight: 800;
+  padding: 25px 0px 25px 0px;
+
+}
+
+.navbar-brand .navbar-light:hover {
+  color: cadetblue;
+  text-shadow: 2px 2px black;
+  font-weight: 800;
+}
+
+body {
+  font-family: "Lato";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-weight: 300;
+}
+
+.fa {
+  font-size: 30px;
+  color: white;
+}
+
+h2 {
+  font-size: 36px;
+  margin: 0 0 16px;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+.table {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.table2 .table {
+  color: white;
+  background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+}
+
+.table2 a {
+  color: white;
+  text-decoration: wavy, black;
+}
+
+.table2 a:hover {
+  color: red;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
+/*# sourceMappingURL=theme.css.map */

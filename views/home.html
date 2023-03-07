@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <style>
+			h1{
+				background-color: black;
+			}
+		</style> -->
+
+	
+		<title>WEB700</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="home.css" type="text/css"/>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		
+		
+		
+		
+	</head>
+
+	<body>
+		
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="/"><img src="logo.png" width="60px" height="60px"/></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+                    <li class="navbar-brand"><a class="navbar-light" href="/students/add"><i class="fas fa-user-plus"></i>&nbsp;Add Student</a> </li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- <div class="container">
+			<div class="row">
+				<main class="col-md-12"> -->
+
+
+
+					<!-- Start your code here -->
+					<!-- <div class="center">
+					<img src="https://wallpaperaccess.com/full/3968789.png" alt="..." class="rounded-circle" width="500" height="300" style="align-items: center;">
+				<br>
+					<h2 style="text-align: center; padding: 10px;">Welcome to Baris's website! </h2>
+					<p style="text-align: center; padding: 10px;">This website uses <strong>express.js</strong> along with <strong>HTML5</strong> elements and <strong>Bootstrap</strong>>
+					framework for the flashy tables and better designs. There are 8 pages that you can reach from this website. List is the following:</p>
+					
+					<div class="bg-white clearfix">
+						<span>Click here to see all the students.</span>
+						<a href="/students" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+					<div class="bg-white clearfix">
+						<span>Click here to see all the courses.</span>
+						<a href="/courses" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+					<div class="bg-white clearfix">
+						<span>Click here to see a random student with student number.</span>
+						<a href="/students/5" class="btn btn-secondary float-right">Go</a>
+					</div>
+					
+					<div class="bg-white clearfix">
+						<span>Click here to see a random course with course number.</span>
+						<a href="/courses/3" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+					<div class="bg-white clearfix">
+						<span>Click here to see students with ?course=num.</span>
+						<a href="/students?course=3" class="btn btn-secondary float-right">Go</a>
+					</div>
+					
+
+					<div class="bg-white clearfix">
+						<span>Click here to see students with TAs.</span>
+						<a href="/TAs" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+					<div class="bg-white clearfix">
+						<span>Click here to go to about page.</span>
+						<a href="/about" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+					<div class="bg-white clearfix">
+						<span>Click here to go to htmlDemo page.</span>
+						<a href="/htmlDemo" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+					<div class="bg-white clearfix">
+						<span>Click here to go to Home page.</span>
+						<a href="/" class="btn btn-secondary float-right">Go</a>
+					</div>
+
+						
+				</div>
+
+				<h3 style="color: darkmagenta; padding-top: 25px;"> Some detailed info about HTML5</h3>
+				<p style="padding-top: 10px;">This site utilizes HTML5: a markup language used for structuring
+					and presenting content on the World Wide Web, It is the fifth and final major HTML 
+					version that is a World Wide Web Consortium (W3C) recommendation. The current specification 
+					is known as the HTML Living Standard. It is so much cooler than HTML4, not as cool as HTML6 is going to be.</p>
+					 -->
+					
+
+					 <section class="strips">
+						<article class="strips__strip">
+							<div class="strip__content">
+							  <a class="strip__title" href="/TAs">Students with TAs</a>
+							</div>
+						  </article>
+
+						  <article class="strips__strip">
+							<div class="strip__content">
+							  <a class="strip__title" href="/courses">All courses</a>
+							</div>
+						  </article>
+						  <article class="strips__strip">
+							<div class="strip__content">
+							  <a class="strip__title" href="/students/5">Random Student</a>
+							</div>
+						  </article>
+
+							<article class="strips__strip">
+								<div class="strip__content">
+								  <a class="strip__title" href="/htmlDemo">htmlDemo page</a>
+								</div>
+							  </article>
+						  
+						<article class="strips__strip">
+						  <div class="strip__content">
+							<a class="strip__title" href="/students">Students</a>
+							</div>
+						  </div>
+						</article>
+
+							<article class="strips__strip">
+								<div class="strip__content">
+								  <a class="strip__title" href="/students?course=3">?Course Page</a>
+								</div>
+							  </article>
+
+								<article class="strips__strip">
+									<div class="strip__content">
+									  <a class="strip__title" href="/"><i class="fas fa-home"></i></a>
+									</div>
+								  </article>
+						
+						
+					  </section>
+					
+					<!-- End your code here  -->
+
+
+
+				</main>
+			</div>
+		</div>
+
+
+		
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
