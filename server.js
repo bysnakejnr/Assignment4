@@ -49,11 +49,7 @@ app.get("/students/add", (req,res)=>{
 
     
 app.post("/students/add",(req,res)=>{
-req.body.course = +req.body.course;
-req.body.TA = (req.body.TA) ? true : false
-db.getAllStudents().then((data)=>{
-  req.body.studentNum = data.length + 1;
-})
+
   db.addStudent(req.body).then(()=>{
     {
       res.redirect("/students");

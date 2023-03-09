@@ -30,7 +30,17 @@ td:nth-child(odd){
 }
 
 
+.btn-primary {
+  background-color: #8C4B7E;
+  transition: transform 0.5s;
+  
+}
 
+.btn-primary:hover {
+  background-color: #461e3d;
+
+  transform: scale(2) rotate(360deg);
+}
 
 
 

@@ -101,6 +101,10 @@ module.exports.getStudentsByNum = function(num){
 
 module.exports.addStudent = function(formData) {
   return new Promise((resolve,reject)=>{
+    
+    formData.studentNum = dataCollection.students.length + 1;
+    formData.course = +formData.course;
+    formData.TA = (formData.TA) ? true : false;
     dataCollection.students.push(formData);
     resolve();
 
