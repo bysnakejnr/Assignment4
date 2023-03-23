@@ -394,14 +394,19 @@ p {
     border: 1px black;
 }
 
+
+
+
 .nav-link:hover{
     color: #c0a1ba;
 }
 
-.navbar-brand, .nav-item, .nav-item:active, .nav-link {
+.navbar-brand, .nav-item, .nav-link {
     background-color: #8C4B7E;
     color: white;
 }
+
+
 
 .strip__content a, .strip__content a:hover{
     color: white;
@@ -415,7 +420,7 @@ p {
     padding-top: 75%;
 }
 
-.navbar-brand .navbar-light, .navbar-light:active{
+.navbar-brand .navbar-light{
   color: black;
   text-shadow: 1px 1px white;
   text-decoration: none;
@@ -433,3 +438,19 @@ p {
 
 }
 
+.nav-item.active{
+  color: #244F75;
+  text-decoration: underline wavy white 2px;
+}
+
+.centerer{
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+.table{
+  margin-left: auto;
+  margin-right: auto;
+
+}

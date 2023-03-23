@@ -1,0 +1,117 @@
+<div class="centerer">
+ <main class="col-md-12">
+ <br>
+
+ <h2>{{student.firstName}} {{student.lastName}} - Student: {{student.studentNum}}</h2>
+ <hr />
+ <form method="post" action="/student/update" id="updateStudent">
+ <input type="hidden" name="studentNum" value="{{student.studentNum}}" />
+ <fieldset>
+ <legend>Personal Information</legend>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-group">
+ <label>First Name:</label>
+ <input class="form-control" name="firstName" type="text" value="{{student.firstName}}" />
+ </div>
+ </div>
+ <div class="col-md-6">
+ <div class="form-group">
+ <label>Last Name:</label>
+ <input class="form-control" name="lastName" type="text" value="{{student.lastName}}" />
+ </div>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-group">
+ <label>Email:</label>
+ <input class="form-control" name="email" type="email" value="{{student.email}}" />
+ </div>
+ </div>
+  <div class="col-md-6">
+ <div class="form-group">
+ <label>Address(Street):</label>
+ <input class="form-control" name="addressStreet" type="text" value="{{student.addressStreet}}" />
+ </div> </div> </div>
+
+
+  <div class="row">
+ <div class="col-md-6">
+ <div class="form-group">
+ <label>Address(City):</label>
+ <input class="form-control" name="addressCity" type="text" value="{{student.addressCity}}" />
+ </div>
+ </div>
+
+ <div class="col-md-6">
+ <div class="form-group">
+ <label>Address(Province):</label>
+ <input class="form-control" name="addressProvince" type="text" value="{{student.addressProvince}}" />
+ </div>
+ </div>
+  </div>
+
+    <div class="row">
+ <div class="col-md-2">
+ <div class="form-group">
+ {{#if student.TA}}
+ <input class="form-control-sm" name="TA" id="TA" type="checkbox" checked/>
+  <label for="TA">Teacher Assistant</label>
+ {{else}}<label for="TA">
+ <input class="form-control-sm" name="TA" id="TA" type="checkbox"/>
+  Teacher Assistant</label>
+ {{/if}}
+ </div>
+ </div>
+
+
+  <div class="col-md-3">
+     <div class="form-group">
+    {{#equal student.status "Full Time"}}
+      
+ <input class="form" id="fulltime" name="status" type="radio" value="Full Time" checked/>
+ <label for="fulltime">Full Time</label>
+   
+ <input class="form" id="parttime" name="status" type="radio" value="Part Time" />
+ <label for="parttime">Part Time</label>
+ {{/equal}}
+{{#equal student.status "Part Time"}}
+      <label for="fulltime">Full Time</label>
+ <input class="form" id="fulltime" name="status" type="radio" value="Full Time" />
+   <label for="parttime">Part Time</label>
+ <input class="form" id="parttime" name="status" type="radio" value="Part Time" checked/>
+ {{/equal}}
+</div>
+ </div>
+ <div class="col-md-1"></div>
+
+
+ <div class="col-md-6">
+ <div class="form-group">
+ <label for="course">Enrolled in Course:</label>
+ <select class="form-control" name="course" id="course">
+    
+                                <option value="1" {{#checker student.course 1}}{{/checker}}>Relational Database Design and Implementation</option>
+                                <option value="2" {{#checker student.course 2}}{{/checker}}>Java Programming</option>
+                                <option value="3" {{#checker student.course 3}}{{/checker}}>Introduction to Cloud Computing</option>
+                                <option value="4" {{#checker student.course 4}}{{/checker}}>Database Administration and Management</option>
+                                <option value="5" {{#checker student.course 5}}{{/checker}}>Web Programming</option>
+                                <option value="6" {{#checker student.course 6}}{{/checker}}>Applied Capstone Project</option>
+                                <option value="7" {{#checker student.course 7}}{{/checker}}>Database Connectivity Using Java</option>
+                                <option value="8" {{#checker student.course 8}}{{/checker}}>Accessing Big Data</option>
+                                <option value="9" {{#checker student.course 9}}{{/checker}}>Datawarehousing</option>
+                                <option value="10" {{#checker student.course 10}}{{/checker}}>Security in Databases and Web Applications</option>
+                                <option value="11" {{#checker student.course 11}}{{/checker}}>Work Term Preparation (Work-Integrated Learning option only)</option>
+                            </select>
+ </div>
+ </div>
+  </div>
+
+ </fieldset>
+ <hr />
+ <input type="submit" class="btn btn-primary float-right" value="Update Student" /><br /><br /><br />
+ </form>
+
+ </main>
+</div>

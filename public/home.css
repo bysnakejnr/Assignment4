@@ -315,7 +315,7 @@ p {
   color: #c0a1ba;
 }
 
-.navbar-brand, .nav-item, .nav-item:active, .nav-link {
+.navbar-brand, .nav-item, .nav-link {
   background-color: #8C4B7E;
   color: white;
 }
@@ -333,7 +333,7 @@ p {
   padding-top: 75%;
 }
 
-.navbar-brand .navbar-light, .navbar-light:active {
+.navbar-brand .navbar-light {
   color: black;
   text-shadow: 1px 1px white;
   text-decoration: none;
@@ -346,6 +346,22 @@ p {
   color: cadetblue;
   text-shadow: 2px 2px black;
   font-weight: 800;
+}
+
+.nav-item.active {
+  color: #244F75;
+  text-decoration: underline wavy white 2px;
+}
+
+.centerer {
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+.table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*# sourceMappingURL=home.css.map */

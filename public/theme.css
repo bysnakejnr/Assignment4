@@ -140,4 +140,15 @@ p {
   text-decoration-style: wavy;
 }
 
+.nav-item.active{
+  color: #244F75;
+  text-decoration: underline wavy white 2px;
+}
+
+body form #updateStudent, #updateStudent label{
+  display: flex;
+  flex-direction: column;
+
+}
+
 /*# sourceMappingURL=theme.css.map */
