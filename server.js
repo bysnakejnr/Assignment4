@@ -88,7 +88,7 @@ app.get("/students", (req, res) => {
         });
       }
       else{
-        res.render('students',{ message: "no results" });
+        res.render('students',{ message: "NO RESULTS" });
       }
       });
     }
@@ -180,7 +180,7 @@ app.get("/student/:num", (req,res)=>{
   viewData.courses = []; // set courses to empty if there was an error
   }).then(() => {
   if (viewData.student == null) { // if no student - return an error
-  res.status(404).send("Student Not Found");
+  res.render(404).send("Student Not Found");
   } else {
   res.render("student", { viewData: viewData }); // render the "student" view
   }

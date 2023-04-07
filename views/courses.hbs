@@ -16,6 +16,7 @@
 </tr>
 </thead>
 <tbody>
+   {{#if courses}}
 {{#each courses}}
 <tr>
 <td><a href="/course/{{this.courseId}}"> {{this.courseCode}}</a></td>
@@ -24,6 +25,12 @@
 </tr>
 
 {{/each}}
+{{else}}
+<tr>
+   <td colspan="3" align="center">{{message}}</td>
+</tr>
+
+{{/if}}
 </tbody>
 </table>
  </div>
