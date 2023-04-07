@@ -1,10 +1,10 @@
 /*********************************************************************************
-* WEB700 – Assignment 04
+* WEB700 – Assignment 06
 * I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
 * of this assignment has been copied manually or electronically from any other source
 * (including 3rd party web sites) or distributed to other students.
 *
-* Name: Baris Berber Student ID: 133731224 Date: 24 March 2023
+* Name: Baris Berber Student ID: 133731224 Date: 06 April 2023
 *
 * Online (Cyclic) Link: https://shy-jade-millipede-tam.cyclic.app/
 *
