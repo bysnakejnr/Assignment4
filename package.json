@@ -15,7 +15,10 @@
     "express-handlebars": "^7.0.2",
     "jquery": "^3.6.3",
     "node-sass": "^8.0.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
     "sass": "^1.58.3",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "sequelize": "^6.30.0"
   }
 }

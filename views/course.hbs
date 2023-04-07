@@ -4,18 +4,20 @@
   <h2>{{course.courseDescription}}</h2>
  <hr />
 
- <form>
+    <form method="post" action="/course/update" id="updateCourse">
  <div class="row">
  <div class="col-md-3">
  <div class="form-group">
  <label for="courseDescription">Course Code</label>
- <input class="form-control" id="courseCode" name="courseCode" type="text" readonly value="{{course.courseCode}}" /> 
+ <input type="hidden" id="courseId" name="courseId" value="{{course.courseId}}" />
+ <input class="form-control" id="courseCode" name="courseCode" type="text" value="{{course.courseCode}}" /> 
  </div>
  </div>
  <div class="col-md-9">
  <div class="form-group">
  <label for="courseDescription">Course Description</label>
- <input class="form-control" id="courseDescription" name="courseDescription" type="text" readonly value="{{course.courseDescription}}" />
+ <input class="form-control" id="courseDescription" name="courseDescription" type="text" value="{{course.courseDescription}}" />
+ <input type="submit" class="btn btn-primary float-right" value="Update Course" /><br /><br /><br />
 
  </div>
  </div>

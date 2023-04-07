@@ -4,11 +4,14 @@
 * of this assignment has been copied manually or electronically from any other source
 * (including 3rd party web sites) or distributed to other students.
 *
-* Name: Baris Berber Student ID: 133731224 Date: 09 March 2023
+* Name: Baris Berber Student ID: 133731224 Date: 24 March 2023
 *
 * Online (Cyclic) Link: https://shy-jade-millipede-tam.cyclic.app/
 *
 ********************************************************************************/ 
+
+
+
 
 const express = require("express");
 const app = express();
@@ -68,15 +71,25 @@ app.get("/students", (req, res) => {
     if (req.query.course) {
       let courseNo = req.query.course;
       db.getStudentsByCourse(courseNo).then((data) => {
+        if(data.length>0){
         res.render('students',{
           students: data
         });
+      }
+      else{
+        res.render('students',{ message: "no results" });
+      }
       });
     } else {
       db.getAllStudents().then((data) => {
+        if(data.length>0){
         res.render('students',{
           students: data
         });
+      }
+      else{
+        res.render('students',{ message: "no results" });
+      }
       });
     }
   });
@@ -84,7 +97,10 @@ app.get("/students", (req, res) => {
 
 
 app.get("/students/add", (req,res)=>{
-  res.render('addStudent');
+  db.getAllCourses().then(data=>{
+    res.render('addStudent', {courses:data});
+  })
+  
   })
 
     
@@ -98,28 +114,78 @@ app.post("/students/add",(req,res)=>{
 
 });
 
+app.get("/courses/add", (req,res)=>{
+  res.render('addCourse');
+  })
+
+    
+app.post("/courses/add",(req,res)=>{
+
+  db.addCourse(req.body).then(()=>{
+    {
+      res.redirect("/courses");
+    }
+    });
+
+});
+
 
 
 app.get("/courses", (req,res)=>{
         db.getAllCourses().then(data=>{
+          if(data.length>0){
             res.render('courses', {
               courses : data
 
             })
+          }
+          else{
+            res.render('courses',{
+              message: "No results returned."
+            });
+            
+          }
         });
     });
 
 
 app.get("/student/:num", (req,res)=>{
     let num = req.params.num;
+    let viewData = {};
         db.getStudentsByNum(num).then(data=>{
-            if(data.length==0){
-                res.send(`There is no student with the number ${num}`)
+          if (data) {
+            viewData.student = data; //store student data in the "viewData" object as "student"
+            console.log(viewData.student);
+          }
+          else {
+            viewData.student = null; // set student to null if none were returned
             }
-            else
-            res.render("student", { student: data });
-        });
-    });
+          }).catch(() => {
+            viewData.student = null; // set student to null if there was an error
+            }).then(db.getAllCourses)
+            .then((data) => {
+            viewData.courses = data; // store course data in the "viewData" object as "courses"
+            // loop through viewData.courses and once we have found the courseId that matches
+            // the student's "course" value, add a "selected" property to the matching
+            // viewData.courses object
+            // loop through viewData.courses and once we have found the courseId that matches
+ // the student's "course" value, add a "selected" property to the matching
+ // viewData.courses object
+ for (let i = 0; i < viewData.courses.length; i++) {
+  if (viewData.courses[i].courseId == viewData.student.course) {
+  viewData.courses[i].selected = true;
+  }
+  }
+  }).catch(() => {
+  viewData.courses = []; // set courses to empty if there was an error
+  }).then(() => {
+  if (viewData.student == null) { // if no student - return an error
+  res.status(404).send("Student Not Found");
+  } else {
+  res.render("student", { viewData: viewData }); // render the "student" view
+  }
+  });
+ });
 
 app.get("/courses/:num", (req,res)=>{
   let num = req.params.num;
@@ -128,9 +194,27 @@ app.get("/courses/:num", (req,res)=>{
               res.send(`There is no student with the course number ${num}`);
           }
           else
-          res.json(data);
+          res.render(('students'),{
+            students : data
+          });
       });
   });
+
+  app.get("/course/delete/:id", (req,res)=>{
+    let id = req.params.id;
+        db.deleteCourse(id).then(()=>{
+          res.redirect('/courses')
+        })
+        
+      });
+
+  app.get("/students/delete/:id", (req,res)=>{
+        let id = req.params.id;
+            db.deleteStudent(id).then(()=>{
+              res.redirect('/students')
+            })
+            
+          });
 
 
 app.get("/course/:num", (req,res)=>{
@@ -162,6 +246,13 @@ app.get("/htmlDemo", (req,res)=>{
 app.post("/student/update", (req, res) => {
       db.updateStudent(req.body).then(()=>{
         res.redirect("/students");
+      })
+  
+     });
+
+app.post("/course/update", (req, res) => {
+      db.updateCourse(req.body).then(()=>{
+        res.redirect("/courses");
       })
   
      });
